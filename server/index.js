@@ -2,6 +2,11 @@ const webSocket = require("ws");
 
 const wss = new webSocket.Server({
   port: 9876,
+  verifyClient: (info )=> {
+    //prints info about client
+    // console.log(info);
+    return true
+  }
 });
 
 wss.on("connection", function (ws) {
